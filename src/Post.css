@@ -47,6 +47,6 @@ pre {
   line-height: 2rem;
 }
 
-.shares > iframe, a {
+.shares > iframe, .shares > a {
   margin-right: 10px;
 }
