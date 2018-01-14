@@ -1,0 +1,16 @@
+.ui.secondary.pointing.menu > .item.header-logo {
+  padding-left: 0px;
+  padding-bottom: 0px;
+}
+
+.ui.secondary.pointing.menu .item {
+  font-size: 1.5rem;
+}
+
+.ui.secondary.pointing.menu > a, .ui.secondary.pointing.menu > a:hover {
+  color: #444;
+}
+
+.ui.secondary.pointing.menu {
+  border-bottom: none;
+}
