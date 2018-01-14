@@ -47,6 +47,10 @@ pre {
   line-height: 2rem;
 }
 
+.hljs {
+  padding: 0;
+}
+
 .shares > iframe, .shares > a {
   margin-right: 10px;
 }
