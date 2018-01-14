@@ -20,6 +20,7 @@ class Post extends Component {
         this.setState({
           body: response
         })
+        document.title = response.split(/\n/)[0].slice(1)
       })
     } else {
       this.setState({

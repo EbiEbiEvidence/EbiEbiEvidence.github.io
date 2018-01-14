@@ -23,6 +23,7 @@
 .article h2 {
   border-left: solid 4px #444;
   padding: 0px 10px;
+  margin-top: 80px;
 }
 
 .article p {

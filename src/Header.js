@@ -31,7 +31,7 @@ class H extends Component {
               <Menu.Item name='/' active={activeItem === '/'} onClick={this.handleItemClick} as='span' >
                 Home
               </Menu.Item>
-              <Menu.Item name='posts' active={activeItem === 'posts'} onClick={this.handleItemClick} as='span' >
+              <Menu.Item name='/posts' active={activeItem === '/posts'} onClick={this.handleItemClick} as='span' >
                 Blog
               </Menu.Item>
             </Menu.Menu>
