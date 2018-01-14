@@ -46,3 +46,7 @@ pre {
   padding: 3px 5px;
   line-height: 2rem;
 }
+
+.shares > iframe, a {
+  margin-right: 10px;
+}
