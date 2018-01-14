@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route, Link } from 'react-router-dom'
-import { Container, Header, Image, Label, Segment } from 'semantic-ui-react'
+import { Container, Header, Icon, Image, Label, Segment } from 'semantic-ui-react'
 
 import './Home.css'
 
@@ -12,7 +12,24 @@ class Home extends Component {
           <div>
             <Header as='h1'>{"Hello! I'm Kosui Iwasa"}</Header>
             <Header as='h2'>Web & Machine Leaning Engineer</Header>
+            <a href='https://twitter.com/KilledByNLP'><Icon name='twitter' size='huge' /></a>
+            <a href='https://github.com/KilledByNLP'><Icon name='github' size='huge' /></a>
           </div>
+        </section>
+        <section>
+          <Header as='h1'>Awards</Header>
+          <Segment>
+            <Header as='h3'>
+              DeNA サマーインターンシップ 新規サービス開発コース - Aug 2017
+            </Header>
+            優勝
+          </Segment>
+          <Segment>
+            <Header as='h3'>
+              株式会社エイチーム エンジニアコース - Sep 2017
+            </Header>
+            マインド賞(個人優秀賞)受賞
+          </Segment>
         </section>
         <section>
           <Header as='h1'>Products</Header>
@@ -22,6 +39,15 @@ class Home extends Component {
             </Header>
             <p>
               This is a chrome extension to make avatars on twitter.com rotate! It works not only on twitter.com, but also on TweetDeck.
+            </p>
+            <p>
+              各種メディアにて掲載<br />
+              <a href='http://nlab.itmedia.co.jp/nl/articles/1710/26/news084.html' target='_blank'>
+              Twitterのアイコンを回転させたい人に朗報　Twitterのアイコンを回転させるChrome拡張が登場 - ねとらぼ
+              </a><br />
+              <a href='https://forest.watch.impress.co.jp/docs/serial/yajiuma/1088039.html' target='_blank'>
+              “Twitter”のアイコンがぐるぐる回るだけのGoogle Chrome拡張機能が静かなブーム？ - やじうまの杜 - 窓の杜
+              </a><br />
             </p>
             <p>
               <Label>JavaScript</Label>

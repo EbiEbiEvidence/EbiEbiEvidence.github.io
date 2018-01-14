@@ -19,6 +19,7 @@ section.hero {
 
 @media (max-width:425px) {
   section.hero {
+    padding: 100px 0 150px;
     background-size: 200px;
   }
 }

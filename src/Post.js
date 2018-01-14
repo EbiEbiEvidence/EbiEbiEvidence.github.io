@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route, Link } from 'react-router-dom'
 import { Container } from 'semantic-ui-react'
-import ReactMarkdown from 'react-markdown'
+import processor from './markdown-processor'
 import './Post.css'
 
 class Post extends Component {
@@ -34,7 +34,9 @@ class Post extends Component {
 
     return (
       <Container>
-        <ReactMarkdown source={body} escapeHtml={false} className='article' />
+        <div className='article'>
+          {processor.processSync(body).contents}
+        </div>
       </Container>
     )
   }
