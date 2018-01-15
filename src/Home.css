@@ -1,5 +1,5 @@
 section {
-    padding: 0 0 200px;
+    padding: 100px 0;
 }
 
 section.hero {
@@ -33,23 +33,46 @@ section.hero {
   font-size: 3.5rem;
 }
 
-section > h1:before {
+section h1:before {
   content: "";
   display: block;
   width: 20px;
   height: 2px;
-  background: #000000;
+  background: #000;
   margin-right: 10px;
   position: absolute;
   top: 50%;
   left: 0px;
 }
 
-section > h1.ui.header {
+section h1.ui.header {
   position: relative;
   padding-left: 30px;
 }
 
+section.white-text h1.ui.header {
+  color: white;
+}
+
+section.white-text h1:before {
+  background: #fff;
+}
+
 .ui.segment {
-  margin: 20px 0;
+  margin: 30px 0;
+  box-shadow: 10px 15px 15px 5px rgba(34,36,38,.15);
+  border: none;
+  border-radius: 0;
+}
+
+section.gradient-1 {
+  background: #EB3349;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #F45C43, #EB3349);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #F45C43, #EB3349); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+section.gradient-2 {
+  background: #667db6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #667db6, #0082c8, #0082c8, #667db6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #667db6, #0082c8, #0082c8, #667db6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
