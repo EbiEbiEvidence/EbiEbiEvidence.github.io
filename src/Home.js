@@ -9,7 +9,7 @@ class Home extends Component {
         <section className='hero'>
           <Container>
             <Header as='h1'>{"Hello! I'm Kosui Iwasa"}</Header>
-            <Header as='h2'>Web & Machine Leaning Engineer</Header>
+            <Header as='h2'>Web & Machine Learning Engineer</Header>
             <a href='https://twitter.com/KilledByNLP'><Icon name='twitter' size='huge' /></a>
             <a href='https://github.com/KilledByNLP'><Icon name='github' size='huge' /></a>
           </Container>
