@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import { BrowserRouter, Route, Link } from 'react-router-dom'
 import { Container, Header, Icon, Image, Label, Segment } from 'semantic-ui-react'
 
-import './Home.css'
-
 class Home extends Component {
   render() {
     return (
