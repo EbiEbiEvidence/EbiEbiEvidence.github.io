@@ -14,7 +14,7 @@ class Post extends Component {
   componentDidMount = () => {
     const { id } = this.props.match.params
     if (!isNaN(id)) {
-      fetch('/__posts/' + id + '.md')
+      fetch('/post_sources/' + id + '.md')
       .then(response => {
         return response.text()
       })
