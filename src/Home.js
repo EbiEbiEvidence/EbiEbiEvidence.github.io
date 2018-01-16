@@ -1,8 +1,25 @@
 import React, { Component } from 'react'
-import { BrowserRouter, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Route, Link, withRouter } from 'react-router-dom'
 import { Container, Header, Icon, Image, Label, Segment } from 'semantic-ui-react'
 
 class Home extends Component {
+  componentDidMount() {
+    let l = window.location
+    if (l.search) {
+      var q = {}
+      l.search.slice(1).split('&').forEach(function(v) {
+        var a = v.split('=')
+        q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&')
+      })
+      if (q.p !== undefined) {
+        this.props.history.push(
+          l.pathname.slice(0, -1) + (q.p || '') +
+          (q.q ? ('?' + q.q) : '') +
+          l.hash
+        )
+      }
+    }
+  }
   render() {
     return (
       <div>
@@ -85,4 +102,4 @@ class Home extends Component {
   }
 }
 
-export default Home
+export default withRouter(Home)
