@@ -41,7 +41,8 @@
 }
 
 pre {
-  background: #F0F0F0 !important;
+  background: #FFFFFF !important;
+  border: gray solid 1px;
   padding: 3px 5px;
   line-height: 2rem;
 }
