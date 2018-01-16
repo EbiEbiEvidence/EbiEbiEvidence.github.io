@@ -5,12 +5,14 @@ import { Container, Header, Icon, Image, Label, Segment } from 'semantic-ui-reac
 class Home extends Component {
   componentDidMount() {
     let l = window.location
+    console.log(l)
     if (l.search) {
       var q = {}
       l.search.slice(1).split('&').forEach(function(v) {
         var a = v.split('=')
         q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&')
       })
+      console.log(q)
       if (q.p !== undefined) {
         this.props.history.push(
           l.pathname.slice(0, -1) + (q.p || '') +
