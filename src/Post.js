@@ -24,7 +24,7 @@ class ShareButtons extends Component {
         <GooglePlusShareButton url={decodedUrl} title={title}>
           <GooglePlusIcon size={32} round={true} />
         </GooglePlusShareButton>
-        <HatenabookmarkButton title={title}/>
+        <HatenabookmarkButton url={window.url} title={title}/>
       </div>
     )
   }
