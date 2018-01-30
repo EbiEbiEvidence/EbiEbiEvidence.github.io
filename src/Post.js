@@ -13,6 +13,7 @@ import './Post.css'
 class ShareButtons extends Component {
   render () {
     const { url, title, decodedUrl } = this.props
+    console.log(window.location.href)
     return (
       <div className='shares'>
         <TwitterShareButton url={url} title={title}>
@@ -24,7 +25,7 @@ class ShareButtons extends Component {
         <GooglePlusShareButton url={decodedUrl} title={title}>
           <GooglePlusIcon size={32} round={true} />
         </GooglePlusShareButton>
-        <HatenabookmarkButton url={window.url} title={title}/>
+        <HatenabookmarkButton url={window.location.href} title={title}/>
       </div>
     )
   }
