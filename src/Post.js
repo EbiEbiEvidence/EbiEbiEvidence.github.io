@@ -12,16 +12,16 @@ import './Post.css'
 
 class ShareButtons extends Component {
   render () {
-    const { url, title } = this.props
+    const { url, title, decodedUrl } = this.props
     return (
       <div className='shares'>
         <TwitterShareButton url={url} title={title}>
           <TwitterIcon size={32} round={true} />
         </TwitterShareButton>
-        <FacebookShareButton url={url} quote={title}>
+        <FacebookShareButton url={decodedUrl} quote={title}>
           <FacebookIcon size={32} round={true} />
         </FacebookShareButton>
-        <GooglePlusShareButton url={url} title={title}>
+        <GooglePlusShareButton url={decodedUrl} title={title}>
           <GooglePlusIcon size={32} round={true} />
         </GooglePlusShareButton>
         <HatenabookmarkButton url={url} title={title}/>
@@ -64,19 +64,20 @@ class Post extends Component {
 
   render() {
     const { title, body, date, id, } = this.state
-    const url = 'https://killedbynlp.github.io/?p=posts/' + id + '/'
+    const url = 'https://killedbynlp.github.io/posts/' + id + '/'
+    const decodedUrl = 'https://killedbynlp.github.io/?p=posts/' + id + '/'
     return (
       <div>
         <Container>
           <div className='article'>
             <h1>{ title }</h1>
             <h3 style={{textAlign: 'right'}}><i>Posted on { date }</i></h3>
-            <ShareButtons url={url} title={title} />
+            <ShareButtons url={url} decodedUrl={decodedUrl} title={title} />
             {processor.processSync(body).contents}
             <div style={{margin: '10px 0', paddingTop: '40px'}}>
               <hr />
               {"1度でもシェアして頂けるととても喜びます。"}
-              <ShareButtons url={url} title={title} />
+              <ShareButtons url={url} decodedUrl={decodedUrl} title={title} />
             </div>
           </div>
         </Container>
