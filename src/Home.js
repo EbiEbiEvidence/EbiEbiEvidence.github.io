@@ -25,7 +25,7 @@ class Home extends Component {
     let l = window.location
     if (l.search) {
       var q = {}
-      l.search.slice(1).split('&').forEach(function(v) {
+      decodeURIComponent(l.search.slice(1)).split('&').forEach(function(v) {
         var a = v.split('=')
         q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&')
       })
