@@ -64,7 +64,7 @@ class Post extends Component {
 
   render() {
     const { title, body, date, id, } = this.state
-    const url = 'https://killedbynlp.github.io/posts/' + id + '/'
+    const url = 'https://killedbynlp.github.io/?p=posts/' + id + '/'
     return (
       <div>
         <Container>
