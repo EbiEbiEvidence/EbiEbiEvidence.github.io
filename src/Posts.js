@@ -7,7 +7,7 @@ class Posts extends Component {
     posts: []
   }
   componentDidMount = () => {
-    fetch('/posts.json')
+    fetch('/posts.json?d='+Math.random())
     .then(response => {
       return response.json()
     })

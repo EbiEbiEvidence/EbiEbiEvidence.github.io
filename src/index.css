@@ -69,13 +69,19 @@ section.white-text h1:before {
   border-radius: 0;
 }
 
-section.gradient-1 {
+section.gradient-green {
+  background: #EB3349;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #4CAF50, #CDDC39);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #4CAF50, #CDDC39); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+section.gradient-red {
   background: #EB3349;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to bottom, #F45C43, #EB3349);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to bottom, #F45C43, #EB3349); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-section.gradient-2 {
+section.gradient-blue {
   background: #667db6;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to bottom, #667db6, #0082c8, #0082c8, #667db6);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to bottom, #667db6, #0082c8, #0082c8, #667db6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */

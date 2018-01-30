@@ -2,17 +2,33 @@ import React, { Component } from 'react'
 import { BrowserRouter, Route, Link, withRouter } from 'react-router-dom'
 import { Container, Header, Icon, Image, Label, Segment } from 'semantic-ui-react'
 
+class DateSegment extends Component {
+  render() {
+    const { title, date, children } = this.props
+    return (
+      <Segment>
+        <Header as='h3' style={{marginBottom: '0.5rem'}}>
+          { title }
+        </Header>
+        <p style={{marginBottom: '0.5rem'}}>
+          <Icon name='calendar' />
+          { date }
+        </p>
+        { children }
+      </Segment>
+    )
+  }
+}
+
 class Home extends Component {
   componentDidMount() {
     let l = window.location
-    console.log(l)
     if (l.search) {
       var q = {}
       l.search.slice(1).split('&').forEach(function(v) {
         var a = v.split('=')
         q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&')
       })
-      console.log(q)
       if (q.p !== undefined) {
         this.props.history.push(
           l.pathname.slice(0, -1) + (q.p || '') +
@@ -33,32 +49,84 @@ class Home extends Component {
             <a href='https://github.com/KilledByNLP'><Icon name='github' size='huge' /></a>
           </Container>
         </section>
-        <section className='gradient-1 white-text'>
+        <section className='gradient-green white-text'>
           <Container>
-            <Header as='h1'>Awards</Header>
-            <Segment>
-              <Header as='h3'>
-                DeNA サマーインターンシップ 新規サービス開発コース - Aug 2017
-              </Header>
-              優勝
-            </Segment>
-            <Segment>
-              <Header as='h3'>
-                株式会社エイチーム エンジニアコース - Sep 2017
-              </Header>
-              マインド賞(個人優秀賞)受賞
-            </Segment>
+            <Header as='h1'>職歴</Header>
+            <DateSegment
+              title='株式会社ドリコム'
+              date='2017/10 - 現在'>
+              機械学習エンジニア アルバイト
+            </DateSegment>
+            <DateSegment
+              title='ウォンテッドリー株式会社'
+              date='2017/06 - 2017/08'>
+              <div>
+                <p>
+                  Wantedly Peopleチーム<br />機械学習エンジニア インターン
+                </p>
+                <p>
+                  <Label>推薦システム</Label>
+                  <Label>協調フィルタリング</Label>
+                  <Label>Python</Label>
+                  <Label>Docker</Label>
+                  <Label>golang</Label>
+                </p>
+              </div>
+            </DateSegment>
+            <DateSegment
+              title='エッジコンサルティング株式会社'
+              date='2016/10 - 2017/04'>
+              <div>
+                <p>
+                  機械学習エンジニア アルバイト
+                </p>
+                <p>
+                  <Label>文書分類</Label>
+                  <Label>オンライン学習</Label>
+                  <Label>AROW</Label>
+                </p>
+              </div>
+            </DateSegment>
+            <DateSegment
+              title='マッチングッド株式会社'
+              date='2014/10 - 2017/05'>
+              <div>
+                <p>
+                  フロントエンド/バックエンド エンジニア アルバイト
+                </p>
+                <p>
+                  <Label>PHP</Label>
+                  <Label>Laravel</Label>
+                  <Label>MySQL</Label>
+                </p>
+              </div>
+            </DateSegment>
           </Container>
         </section>
-        <section className='gradient-2 white-text'>
+        <section className='gradient-red white-text'>
           <Container>
-            <Header as='h1'>Products</Header>
+            <Header as='h1'>受賞</Header>
+            <DateSegment
+              title='DeNA サマーインターンシップ 新規サービス開発コース'
+              date='2017/08'>
+              優勝
+            </DateSegment>
+            <DateSegment
+              title='株式会社エイチーム エンジニアコース'
+              date='2017/09'>
+              マインド賞(個人優秀賞)
+            </DateSegment>
+          </Container>
+        </section>
+        <section className='gradient-blue white-text'>
+          <Container>
+            <Header as='h1'>制作物</Header>
             <Segment>
               <Header as='h3'>
                 <a href='https://github.com/KilledByNLP/twitter-icon-rotator-chrome-extension'>twitter-icon-rotator-chrome-extension</a> - Oct 2017
               </Header>
               <p>
-                This is a chrome extension to make avatars on twitter.com rotate! It works not only on twitter.com, but also on TweetDeck.
+                twitter.com 上に表示されたアイコンを回転させるGoogle Chrome 拡張機能です。
               </p>
               <p>
                 各種メディアにて掲載<br />

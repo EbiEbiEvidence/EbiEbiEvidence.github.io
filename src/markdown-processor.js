@@ -1,3 +1,4 @@
+import React from 'react'
 import remark from 'remark'
 import reactRenderer from 'remark-react'
 import RemarkLowlight from 'remark-react-lowlight'
@@ -27,10 +28,17 @@ const lang2module = () => {
   return ret
 }
 
+const aWrapper = (props) => (
+  <a target='_blank' {...props}>
+    {props.children}.
+  </a>
+)
+
 const processor = remark().use(reactRenderer, {
   sanitize: false,
   remarkReactComponents: {
-    code: RemarkLowlight(lang2module())
+    code: RemarkLowlight(lang2module()),
+    a: aWrapper
   }
 })
 

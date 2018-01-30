@@ -25,7 +25,7 @@
   margin-top: 80px;
 }
 
-.article p {
+.article p, .article li {
   line-height: 2.5rem;
 }
 
@@ -51,6 +51,21 @@ pre {
   padding: 0;
 }
 
-.shares > iframe, .shares > a {
+.shares {
+  display: flex;
+}
+
+.shares > div, .shares > iframe {
   margin-right: 10px;
+  cursor: pointer;
+}
+
+.shares > iframe {
+  width: 72px !important;
+  height: 32px !important;
+  border-radius: 24px;
+}
+
+.SocialMediaShareCount {
+  text-align: center;
 }

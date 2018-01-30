@@ -2,19 +2,46 @@ import React, { Component } from 'react'
 import { BrowserRouter, Route, Link } from 'react-router-dom'
 import { Container } from 'semantic-ui-react'
 import processor from './markdown-processor'
+import {
+  FacebookShareButton, FacebookIcon, FacebookShareCount,
+  GooglePlusShareButton, GooglePlusIcon, GooglePlusShareCount,
+  TwitterShareButton, TwitterIcon,
+} from 'react-share'
+import { HatenabookmarkButton } from 'react-social-sharebuttons'
 import './Post.css'
+
+class ShareButtons extends Component {
+  render () {
+    const { url, title } = this.props
+    return (
+      <div className='shares'>
+        <TwitterShareButton url={url} title={title}>
+          <TwitterIcon size={32} round={true} />
+        </TwitterShareButton>
+        <FacebookShareButton url={url} title={title}>
+          <FacebookIcon size={32} round={true} />
+        </FacebookShareButton>
+        <GooglePlusShareButton url={url} title={title}>
+          <GooglePlusIcon size={32} round={true} />
+        </GooglePlusShareButton>
+        <HatenabookmarkButton url={url} title={title}/>
+      </div>
+    )
+  }
+}
 
 class Post extends Component {
   state = {
     title: '',
     date: '',
-    body: ''
+    body: '',
+    id: '',
   }
 
   componentDidMount = () => {
     const { id } = this.props.match.params
     if (!isNaN(id)) {
-      fetch('/post-sources/' + id + '.md')
+      fetch('/post-sources/' + id + '.md?d='+Math.random())
       .then(response => {
         return response.text()
       })
@@ -23,39 +50,42 @@ class Post extends Component {
           title: response.split(/\n/)[0].slice(1),
           date: response.split(/\n/)[1],
           body: response.split(/\n/).slice(2).join("\n"),
+          id: id
         })
         document.title = response.split(/\n/)[0].slice(1)
       })
     } else {
       this.setState({
+        title: "Invalid Request",
         body: "Invalid Request"
       })
     }
   }
 
   render() {
-    const { title, body, date } = this.state
-
+    const { title, body, date, id, } = this.state
+    const url = 'https://killedbynlp.github.io/posts/' + id + '/'
     return (
-      <Container>
-        <div className='article'>
-          <h1>{ title }</h1>
-          <h3 style={{textAlign: 'right'}}><i>Posted on { date }</i></h3>
-          <div className='shares'>
-            <a className="twitter-share-button"
-              href="https://twitter.com/share"
-              data-size="large"
-              data-size="large"
-              data-lang="ja"
-              data-dnt="true">
-            Tweet
-            </a>
-            <a href="http://b.hatena.ne.jp/entry/" className="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style={{border: 'none'}} /></a>
-            <div className="fb-like"　data-layout="box_count"></div>
+      <div>
+        <Container>
+          <div className='article'>
+            <h1>{ title }</h1>
+            <h3 style={{textAlign: 'right'}}><i>Posted on { date }</i></h3>
+            <ShareButtons url={url} title={title} />
+            {processor.processSync(body).contents}
+            <div style={{margin: '10px 0', paddingTop: '40px'}}>
+              <hr />
+              {"1度でもシェアして頂けるととても喜びます。"}
+              <ShareButtons url={url} title={title} />
+            </div>
           </div>
-          {processor.processSync(body).contents}
+        </Container>
+        <div style={{marginTop: '200px', padding:'20px 0', background: '#444', color: '#fff'}}>
+          <Container>
+            <small>© 2017-2018 Kosui Iwasa</small>
+          </Container>
         </div>
-      </Container>
+      </div>
     )
   }
 }

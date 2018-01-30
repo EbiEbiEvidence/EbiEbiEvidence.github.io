@@ -10,6 +10,7 @@
     "deploy": "yarn build && gh-pages -d build -b master"
   },
   "devDependencies": {
+    "disqus-react": "^1.0.4",
     "gh-pages": "^1.1.0",
     "highlight.js": "^9.12.0",
     "react": "^16.2.0",
@@ -18,6 +19,8 @@
     "react-markdown": "^3.1.4",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.17",
+    "react-share": "^2.0.0",
+    "react-social-sharebuttons": "^2.1.4",
     "remark": "^8.0.0",
     "remark-react": "^4.0.1",
     "remark-react-lowlight": "^0.7.0",
