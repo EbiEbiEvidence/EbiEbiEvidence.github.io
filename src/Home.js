@@ -22,7 +22,7 @@ class DateSegment extends Component {
 
 class Home extends Component {
   componentDidMount() {
-    let l = decodeURI(window.location)
+    let l = window.location
     if (l.search) {
       var q = {}
       l.search.slice(1).split('&').forEach(function(v) {
