@@ -40,9 +40,14 @@ class Post extends Component {
   }
 
   componentDidMount = () => {
-    const { id } = this.props.match.params
-    if (!isNaN(id)) {
-      fetch('/post-sources/' + id + '.md?d='+Math.random())
+    const { id, year, month } = this.props.match.params
+    if (id.search(/[a-zA-Z0-9\-/]$/) != -1) {
+      var dist = id
+      if (year !== undefined && month !== undefined) {
+        dist = year + '/' + month + '/' + id
+        console.log(dist)
+      }
+      fetch('/post-sources/' + dist + '.md?d='+Math.random())
       .then(response => {
         return response.text()
       })
@@ -51,7 +56,7 @@ class Post extends Component {
           title: response.split(/\n/)[0].slice(1),
           date: response.split(/\n/)[1],
           body: response.split(/\n/).slice(2).join("\n"),
-          id: id
+          id: dist
         })
         document.title = response.split(/\n/)[0].slice(1)
       })
