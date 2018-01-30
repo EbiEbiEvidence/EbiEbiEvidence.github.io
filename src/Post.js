@@ -18,7 +18,7 @@ class ShareButtons extends Component {
         <TwitterShareButton url={url} title={title}>
           <TwitterIcon size={32} round={true} />
         </TwitterShareButton>
-        <FacebookShareButton url={url} title={title}>
+        <FacebookShareButton url={url} quote={title}>
           <FacebookIcon size={32} round={true} />
         </FacebookShareButton>
         <GooglePlusShareButton url={url} title={title}>
