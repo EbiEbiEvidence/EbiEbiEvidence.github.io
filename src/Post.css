@@ -45,6 +45,7 @@ pre {
   border: gray solid 1px;
   padding: 3px 5px;
   line-height: 2rem;
+  white-space: pre-wrap;
 }
 
 .hljs {
