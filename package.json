@@ -21,6 +21,7 @@
     "react-scripts": "1.0.17",
     "react-share": "^2.0.0",
     "react-social-sharebuttons": "^2.1.4",
+    "react-tweet-embed": "^1.1.0",
     "remark": "^8.0.0",
     "remark-react": "^4.0.1",
     "remark-react-lowlight": "^0.7.0",

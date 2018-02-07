@@ -5734,6 +5734,10 @@ react-social-sharebuttons@^2.1.4:
     prop-types "^15.5.10"
     react "^15.0.2"
 
+react-tweet-embed@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-tweet-embed/-/react-tweet-embed-1.1.0.tgz#eb83ad8d75bb29d81b2e5c2d9d586021ceeda948"
+
 react@^15.0.2, react@^15.5.4, react@^15.6.1:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/react/-/react-15.6.2.tgz#dba0434ab439cfe82f108f0f511663908179aa72"

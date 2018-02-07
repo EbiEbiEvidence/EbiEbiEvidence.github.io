@@ -1,5 +1,10 @@
 [
   {
+    "id": "2018/02/pop-team-epic-1",
+    "title": "機械学習で、タイムライン上のポプテピピックに関するツイートにモザイクを掛ける(前編)",
+    "date": "2018/1/30"
+  },
+  {
     "id": "2018/01/for-new-students",
     "title": "macOSで研究をする為の環境構築: Homebrew, Atom, anyenv, latexmk",
     "date": "2018/1/30"
