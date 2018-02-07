@@ -1,5 +1,5 @@
 # ReactでコードのSyntax Highlightを含めたMarkdownレンダリングをする
-2018/1/15
+2018/01/15
 
 ## 参考記事
 [remark+ReactでMarkdownをレンダリングする – 踊る犬.netブログ (旧)](https://blog.odoruinu.net/2016/12/09/rendering-markdown-with-remark-react/)

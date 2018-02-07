@@ -1,5 +1,5 @@
 # CSSのmargin, paddingプロパティにおけるleft, right, top, bottomの順番の覚え方
-2018/1/14
+2018/01/14
 
 ## はじめに
 CSSでmarginやpaddingを書いていると、「あれ、上下と左右、どっちが先だっけ？」などと
