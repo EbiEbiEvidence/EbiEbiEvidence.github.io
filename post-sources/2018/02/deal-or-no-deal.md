@@ -4,9 +4,6 @@
 ## お断り
 誤りがあるかもしれません。その場合は下記のコメントフォームもしくはTwitterアカウントへのReplyにてお知らせ下さい。
 
-## 概要
-
-
 ## TL;DR
 
 [元論文: Deal or No Deal? End-to-End Learning for Negotiation Dialogues](https://arxiv.org/abs/1706.05125)
