@@ -1,27 +1,32 @@
 [
   {
+    "id": "2018/02/deal-or-no-deal",
+    "title": "文献購読: Deal or No Deal? End-to-End Learning for Negotiation Dialogues",
+    "date": "2018/02/19"
+  },
+  {
     "id": "2018/02/pop-team-epic-1",
     "title": "機械学習で、タイムライン上のポプテピピックに関するツイートにモザイクを掛ける(前編)",
-    "date": "2018/1/30"
+    "date": "2018/02/07"
   },
   {
     "id": "2018/01/for-new-students",
     "title": "macOSで研究をする為の環境構築: Homebrew, Atom, anyenv, latexmk",
-    "date": "2018/1/30"
+    "date": "2018/01/30"
   },
   {
     "id": "2018/01/negotiation-dataset",
     "title": "対話交渉(Negotiation Dialogue)のデータセット一覧",
-    "date": "2018/1/18"
+    "date": "2018/01/18"
   },
   {
     "id": "2018/01/react-syntax-highlight",
     "title": "ReactでコードのSyntax Highlightを含めたMarkdownレンダリングをする",
-    "date": "2018/1/15"
+    "date": "2018/01/15"
   },
   {
     "id": "2018/01/css-margin",
     "title": "CSSのmargin, paddingプロパティにおけるleft, right, top, bottomの順番の覚え方",
-    "date": "2018/1/14"
+    "date": "2018/01/14"
   }
 ]
