@@ -4,6 +4,8 @@ import reactRenderer from 'remark-react'
 import RemarkLowlight from 'remark-react-lowlight'
 import TweetEmbed from 'react-tweet-embed'
 
+import { Card, Image } from 'semantic-ui-react'
+
 // highlight.js/lib/languages/ 以下から読み込み可能な全ての言語を列挙しています (2018/01/15 時点)
 const langs = ['1c', 'accesslog', 'actionscript', 'ada', 'apache', 'applescript', 'cpp', 'arduino', 'armasm', 'xml', 'asciidoc', 'aspectj', 'autohotkey', 'autoit', 'avrasm', 'axapta', 'bash', 'basic', 'bnf', 'brainfuck', 'cal', 'capnproto', 'ceylon', 'clojure', 'clojure-repl', 'cmake', 'coffeescript', 'coq', 'cos', 'crmsh', 'crystal', 'cs', 'csp', 'css', 'd', 'markdown', 'dart', 'delphi', 'diff', 'django', 'dns', 'dockerfile', 'dos', 'dsconfig', 'dts', 'dust', 'elixir', 'elm', 'ruby', 'erb', 'erlang-repl', 'erlang', 'excel', 'fix', 'fortran', 'fsharp', 'gams', 'gauss', 'gcode', 'gherkin', 'glsl', 'go', 'golo', 'gradle', 'groovy', 'haml', 'handlebars', 'haskell', 'haxe', 'hsp', 'htmlbars', 'http', 'inform7', 'ini', 'irpf90', 'java', 'javascript', 'json', 'julia', 'kotlin', 'lasso', 'ldif', 'less', 'lisp', 'livecodeserver', 'livescript', 'lsl', 'lua', 'makefile', 'mathematica', 'matlab', 'maxima', 'mel', 'mercury', 'mipsasm', 'mizar', 'perl', 'mojolicious', 'monkey', 'moonscript', 'nginx', 'nimrod', 'nix', 'nsis', 'objectivec', 'ocaml', 'openscad', 'oxygene', 'parser3', 'pf', 'php', 'pony', 'powershell', 'processing', 'profile', 'prolog', 'protobuf', 'puppet', 'purebasic', 'python', 'q', 'qml', 'r', 'rib', 'roboconf', 'rsl', 'ruleslanguage', 'rust', 'scala', 'scheme', 'scilab', 'scss', 'smali', 'smalltalk', 'sml', 'sqf', 'sql', 'stan', 'stata', 'step21', 'stylus', 'swift', 'taggerscript', 'yaml', 'tap', 'tcl', 'tex', 'thrift', 'tp', 'twig', 'typescript', 'vala', 'vbnet', 'vbscript', 'vbscript-html', 'verilog', 'vhdl', 'vim', 'x86asm', 'xl', 'xquery', 'zephir']
 
@@ -84,12 +86,33 @@ class pWrapper extends Component {
   }
 }
 
+const imgWrapper = (props) => (
+  props.title ? (
+    <Card style={{marginBottom: '30px'}}>
+      <Image src={props.src} />
+      <Card.Content>
+        <Card.Header>
+          {props.title}
+        </Card.Header>
+        <Card.Description>
+          {props.alt}
+        </Card.Description>
+      </Card.Content>
+    </Card>
+  ) : (
+    <img src={props.src}>
+      {props.children}
+    </img>
+  )
+)
+
 const processor = remark().use(reactRenderer, {
   sanitize: false,
   remarkReactComponents: {
     code: RemarkLowlight(lang2module()),
     a: aWrapper,
     p: pWrapper,
+    img: imgWrapper,
   }
 })
 
